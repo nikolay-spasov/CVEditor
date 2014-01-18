@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<CV xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FirstName>Pesho</FirstName>
+  <LastName>Petrov</LastName>
+  <Address>Pesho street 123</Address>
+  <PhoneNumber>123-123-321</PhoneNumber>
+  <Jobs>
+    <Job>
+      <From>2014-01-17T00:00:00</From>
+      <To>2014-01-17T00:00:00</To>
+      <Company>Pesho's company for quality code</Company>
+      <JobTitle>Boss</JobTitle>
+      <DetailedInformation>It's a secret.</DetailedInformation>
+    </Job>
+    <Job>
+      <From>2014-01-17T00:00:00</From>
+      <To>2014-01-17T00:00:00</To>
+      <Company>Mitaka's company for money making</Company>
+      <JobTitle>Developer</JobTitle>
+      <DetailedInformation>Who cares it's just a test.</DetailedInformation>
+    </Job>
+  </Jobs>
+</CV>

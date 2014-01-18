@@ -1,0 +1,87 @@
+﻿@model CVEditor.Models.CV
+
+@{
+    ViewBag.Title = "EditCV";
+}
+
+<h2>EditCV</h2>
+
+@using (Html.BeginForm("EditCV", "Home"))
+{
+    <div>
+        @Html.ValidationMessageFor(m => m.FirstName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.FirstName)
+        @Html.EditorFor(m => m.FirstName)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m.LastName)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.LastName)
+        @Html.EditorFor(m => m.LastName)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m.Address)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.Address)
+        @Html.EditorFor(m => m.Address)
+    </div>
+    <div>
+        @Html.ValidationMessageFor(m => m.PhoneNumber)
+    </div>
+    <div>
+        @Html.LabelFor(m => m.PhoneNumber)
+        @Html.EditorFor(m => m.PhoneNumber)
+    </div>
+
+    <div id="jobs">
+
+        @for (int i = 0; i < Model.Jobs.Count; i++)
+        {
+            <div data-job-index="@i">
+                <div>
+                    @Html.ValidationMessageFor(m => Model.Jobs[i].JobTitle)
+                </div>
+                <div>
+                    @Html.LabelFor(m => Model.Jobs[i].JobTitle)
+                    @Html.EditorFor(m => Model.Jobs[i].JobTitle)
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(m => Model.Jobs[i].From)
+                </div>
+                <div>
+                    @Html.LabelFor(m => Model.Jobs[i].From)
+                    @Html.EditorFor(m => Model.Jobs[i].From)
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(m => Model.Jobs[i].To)
+                </div>
+                <div>
+                    @Html.LabelFor(m => Model.Jobs[i].To)
+                    @Html.EditorFor(m => Model.Jobs[i].To)
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(m => Model.Jobs[i].Company)
+                </div>
+                <div>
+                    @Html.LabelFor(m => Model.Jobs[i].Company)
+                    @Html.EditorFor(m => Model.Jobs[i].Company)
+                </div>
+                <div>
+                    @Html.ValidationMessageFor(m => Model.Jobs[i].DetailedInformation)
+                </div>
+                <div>
+                    @Html.LabelFor(m => Model.Jobs[i].DetailedInformation)
+                    @Html.EditorFor(m => Model.Jobs[i].DetailedInformation)
+                </div>
+            </div>
+        }
+    </div>
+    
+    <input type="submit" value="Edit" />
+}
+
+@Html.ActionLink("Add job", "AddSlot", new { id = TempData["fileid"].ToString() })

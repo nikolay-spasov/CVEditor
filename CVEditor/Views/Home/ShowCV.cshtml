@@ -1,0 +1,57 @@
+﻿@model CVEditor.Models.CV
+
+@{
+    ViewBag.Title = "ShowCV";
+}
+
+<h2>ShowCV</h2>
+
+<div>
+    @Html.LabelFor(m => m.FirstName)
+    @Html.DisplayFor(m => m.FirstName)
+</div>
+<div>
+    @Html.LabelFor(m => m.LastName)
+    @Html.DisplayFor(m => m.LastName)
+</div>
+<div>
+    @Html.LabelFor(m => m.Address)
+    @Html.DisplayFor(m => m.Address)
+</div>
+<div>
+    @Html.LabelFor(m => m.PhoneNumber)
+    @Html.DisplayFor(m => m.PhoneNumber)
+</div>
+
+<div id="jobs">
+    @foreach (var job in Model.Jobs)
+    {
+        <div class="job">
+            <div>
+                @Html.LabelFor(m => job.JobTitle)
+                @Html.DisplayFor(m => job.JobTitle)
+            </div>
+            <div>
+                @Html.LabelFor(m => job.From)
+                @Html.DisplayFor(m => job.From)
+            </div>
+            <div>
+                @Html.LabelFor(m => job.To)
+                @Html.DisplayFor(m => job.To)
+            </div>
+            <div>
+                @Html.LabelFor(m => job.Company)
+                @Html.DisplayFor(m => job.Company)
+            </div>
+            <div>
+                @Html.LabelFor(m => job.DetailedInformation)
+                @Html.DisplayFor(m => job.DetailedInformation)
+            </div>
+        </div>
+    }
+</div>
+
+<div>@Html.ActionLink("Edit", "EditCV", new { id = TempData["fileid"].ToString() })</div>
+
+<div>@Html.ActionLink("Download", "DownloadCV", new { id = TempData["fileid"].ToString() })</div>
+
