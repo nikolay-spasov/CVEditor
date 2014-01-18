@@ -1,0 +1,1 @@
+CVEditor======================Simple xml CV editor. I created it to answer [this question](http://forums.academy.telerik.com/143522/задачка-за-позиция-junior-asp-net-developer) .
